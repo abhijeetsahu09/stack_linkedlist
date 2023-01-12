@@ -70,6 +70,7 @@ pushBtn.addEventListener("click", function () {
   updateNode();
   UpdateUI(value);
   TOP++;
+  valueINP.value = "";
 });
 
 //PUSHING IN STACK
@@ -89,6 +90,7 @@ topBtn.addEventListener("click", function () {
   } else {
     displayTop.textContent = `TOP ELEMENT IN THE \n STACK IS : ${stack[TOP]}`;
   }
+  valueINP.value = "";
 });
 
 //EMPTY EVENT
@@ -101,6 +103,7 @@ emptyBtn.addEventListener("click", function () {
   } else {
     displayTop.textContent = `THE STACK IS NOT EMPTY!`;
   }
+  valueINP.value = "";
 });
 
 //DISPLAY EVENT
@@ -112,10 +115,11 @@ displayBtn.addEventListener("click", function () {
   } else {
     let str = "";
     for (let i = TOP; i >= 0; i--) {
-      str = str + `${stack[i]} `;
+      str = str + `${stack[i]} => `;
     }
-    displayTop.textContent = `ELEMENTS OF STACK ARE : ${str}`;
+    displayTop.textContent = `${str + "NULL"}`;
   }
+  valueINP.value = "";
 });
 
 // POP IN ACTION
@@ -149,6 +153,7 @@ popBtn.addEventListener("click", function () {
       stackAdd.insertAdjacentHTML("afterbegin", html);
     }
   }
+  valueINP.value = "";
 });
 
 console.log("hello");
